@@ -60,3 +60,17 @@ Para realizar los test o pruebas consta de tres partes:
   2) Estimulo: lo que se le aplica al sujeto de prueba
   3) Observacion del comportamiento
 
+
+Para trabajar de una manera ordenada crearemos una carpeta en nuestro directorio la cual contendra unicamente los test que queramos realizar y los test tendan el mismo nombre que el archivo que testeamos pero con la extension ".test.js"
+
+# TESTEO DE PROMESAS
+
+si tenemos que realizarle testeos a promesas y tenemos versiones de node anteriores a la 18, tendremos que hacer configuraciones para poder realizar los test, las cofiguraciones se realizan del siguiente modo:
+    1) Se crea el archivo jest.config.js y dentro del mismo colocamos el siguiente codigo
+
+      module.exports = {
+        TODO : jsdom,
+        setupFiles : ['./jest.setup.js']
+      } 
+    
+    2) luego creamos el archivo jest.setup.js, el cual requiere de una dependencia de desarrollo para funcionar, intalaremos: "npm install --save -dev whatwg-fetch" ,una vez realizada la instalacion de la dependencia, dentro del archivo jest.setup.js importaremos la dependencia (import 'whatwg-fetch';) finalizando asi las configuraciones. 
